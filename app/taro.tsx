@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { LucideFileImage, LucideSave } from 'lucide-react'
 import React, { useRef, useState } from 'react'
 import { toast } from 'sonner'
+import { UAParser } from 'ua-parser-js'
 
 function removeFileExtension(filename: string): string {
   const dotIndex = filename.lastIndexOf('.')
@@ -14,6 +15,12 @@ function removeFileExtension(filename: string): string {
 }
 
 let inputFilenameWithoutExtension = '大頭貼'
+
+// NOTE: hide download button for mobile
+// reason: on mobile, users can simply long-press the image to download it
+const deviceType = new UAParser().getDevice().type
+const enableDownloadButton =
+  deviceType === undefined || (deviceType !== 'mobile' && deviceType !== 'tablet' && deviceType !== 'wearable')
 
 export function Taro() {
   const [outputImage, setOutputImage] = useState<string>('')
@@ -148,13 +155,15 @@ export function Taro() {
       {/* Output image */}
       {outputImage && (
         <div className="mt-8">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-primary">芋化結果</h2>
+          <div className={`mb-4 flex items-center ${enableDownloadButton ? 'justify-between' : 'justify-center'}`}>
+            <h2 className="text-2xl font-semibold text-primary">芋化結果</h2>
 
-            <Button onClick={handleDownload}>
-              <LucideSave className="size-4" />
-              儲存芋化圖片
-            </Button>
+            {enableDownloadButton && (
+              <Button onClick={handleDownload}>
+                <LucideSave className="size-4" />
+                儲存芋化圖片
+              </Button>
+            )}
           </div>
 
           <picture>
