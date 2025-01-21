@@ -147,7 +147,6 @@ export function Taro() {
           <LucideFileImage className={`size-12 ${isDragging ? 'text-purple-500' : 'text-muted-foreground'}`} />
           <div className="text-lg text-muted-foreground">
             <p className="font-medium">點此選取要被芋化的圖片</p>
-            <p className="mt-1 text-sm text-muted-foreground">支援的圖片格式: JPG, PNG, GIF</p>
           </div>
         </div>
       </div>
