@@ -39,6 +39,7 @@
     "babel-plugin-react-compiler": "^19.0.0-beta-3229e95-20250315",
     "eslint": "^9.23.0",
     "eslint-config-next": "^15.2.3",
+    "eslint-plugin-react-compiler": "^19.0.0-beta-3229e95-20250315",
     "eslint-plugin-tailwindcss": "^3.18.0",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
