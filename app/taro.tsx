@@ -135,8 +135,7 @@ export function Taro() {
 
       {/* Drag and drop area */}
       <div
-        className={`relative cursor-pointer rounded-xl border-2 border-dashed p-4 text-center transition-colors xs:p-8
-            ${isDragging ? 'border-purple-500 bg-purple-50' : 'border-border hover:border-purple-400'}`}
+        className={`xs:p-8 relative cursor-pointer rounded-xl border-2 border-dashed p-4 text-center transition-colors ${isDragging ? 'border-purple-500 bg-purple-50' : 'border-border hover:border-purple-400'}`}
         onClick={() => fileInputRef.current?.click()}
         onDragEnter={handleDragEvents(true)}
         onDragOver={handleDragEvents(true)}
@@ -145,7 +144,7 @@ export function Taro() {
       >
         <div className="flex flex-col items-center gap-4">
           <LucideFileImage className={`size-12 ${isDragging ? 'text-purple-500' : 'text-muted-foreground'}`} />
-          <div className="text-lg text-muted-foreground">
+          <div className="text-muted-foreground text-lg">
             <p className="font-medium">點此選取要被芋化的圖片</p>
           </div>
         </div>
@@ -155,7 +154,7 @@ export function Taro() {
       {outputImage && (
         <div className="mt-8">
           <div className={`mb-4 flex items-center ${enableDownloadButton ? 'justify-between' : 'justify-center'}`}>
-            <h2 className="text-2xl font-semibold text-primary">芋化結果</h2>
+            <h2 className="text-primary text-2xl font-semibold">芋化結果</h2>
 
             {enableDownloadButton && (
               <Button onClick={handleDownload}>

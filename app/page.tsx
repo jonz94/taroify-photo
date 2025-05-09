@@ -7,7 +7,7 @@ export default function Home() {
       <main className="flex h-full flex-col justify-center gap-y-4">
         <Taro></Taro>
 
-        <div className="absolute right-4 top-4">
+        <div className="absolute top-4 right-4">
           <ModeToggle></ModeToggle>
         </div>
       </main>
