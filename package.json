@@ -14,7 +14,8 @@
     "fmt": "pnpm run prettier && pnpm run lint",
     "lint": "next lint --fix",
     "prettier": "prettier --write .",
-    "start": "next start"
+    "start": "next start",
+    "upgrade-tailwindcss": "npx @tailwindcss/upgrade@latest"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.14",
